@@ -1,13 +1,13 @@
 pipeline {
         agent any
-        environment {
-         NEW_VERSION = '1.3.0'       
+        tools {
+         maven maven3.5       
         }
         stages {
              stage("build") {
              steps {
              echo "welcome to the build stage"
-             echo "building version ${NEW_VERSION}"
+               sh "mvn install"
               }
           }
          stage("test") {
