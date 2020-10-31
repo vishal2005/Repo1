@@ -13,7 +13,7 @@ pipeline {
       }
       stage("Deploy") {
          steps {
-         echo "Welcome to the Deploy stage
+         echo "Welcome to the Deploy stage"
     
             }
        }      
