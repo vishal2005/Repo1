@@ -8,12 +8,12 @@ pipeline {
           }
          stage("test") {
           steps {
-          echo "Welocme to the test stage"
+          echo "Welcome to the test stage"
           }
       }
       stage("Deploy") {
          steps {
-         echo "Welocme to the Deploy stage
+         echo "Welcome to the Deploy stage
     
             }
        }      
