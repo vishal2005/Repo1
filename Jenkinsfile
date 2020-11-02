@@ -1,31 +1,14 @@
-pipeline {
-        agent any
-        tools {
-         maven 'maven3.5'       
-        }
-        stages {
-             stage("build") {
-             steps {
-             echo "welcome to the build stage"
-               sh "mvn install"
-              }
-          }
-         stage("test") {
-          steps {
-          echo "Welcome to the test stage"
-          }
-      }
-      stage("Deploy") {
-         steps {
-         echo "Welcome to the Deploy stage"
-    
-            }
-       }      
-          
-    }
- }
+node('node') {
+        stage('artifacts to s3') {
+        try {
+               
+          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'deploytos3', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+                  sh "aws s3 ls"
+                  sh "aws s3 cp 
+                  
+                  
  
-   
+        
       
           
           
