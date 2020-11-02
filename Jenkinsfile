@@ -1,4 +1,4 @@
-node('node'){
+node {
         stage('artifacts to s3') {
         try {
                
